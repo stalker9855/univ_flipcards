@@ -1,125 +1,151 @@
+:root{
+    --primary: #007bff;
+    --secondary: #5a48fe;
+    --dark: #212121;
+    --light: #f3f3f3;
+    --green: #008000;
+    --red: #D22B2B;	
+}
+*{
+    margin: 0;
+}
 body{
+    font-family: monospace;
     width: 100%;
-    margin: 0px auto;
-    background-color: #24283b;
+}
+
+.card{
+    margin: 100px auto 0;
+    width: 600px;
+    height: 400px;
+}
+
+.card__inner{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card__inner.is-flipped{
+    transform: rotateY(180deg);
+}
+
+.card__face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0,0,0,0.2);
+}
+
+.card__face--front{
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-p{
-    color: #c0caf5;
-    margin: 2px;
-    font-size: 36px;
-    font-family: monospace;
-    font-weight: bolder;
+.card__face--front h2{
+    color: #fff;
+    font-size: 38px;
 }
-img{
-    user-select: none;
-    margin: 4px;
-    border: solid 5px #ff9e64;
-    box-shadow: 0px 0px 5px #ff9e64;
-    border-radius: 10px;
-    width: 200px;
-    height: 200px;
+
+.card__face--back{
+    background-color: var(--light);
+    transform: rotateY(180deg);
 }
-#btn{
-    font-family: monospace;
+
+.card__content{
+    width: 100%;
+    height: 100%;
+}
+.card__header{
+    position: relative;
+    padding: 30px 30px 40px;
+}
+
+.card__header:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 0 50% 0;
+    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary), 115%);
+}
+.card__header h2{
+    color: #fff;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+.card__body{
+    padding: 30px;
+}
+.card__body h3{
+    color: var(--dark);
     font-size: 24px;
-    color: #c0caf5;
-    border: solid 3px #ff9e64;
-    box-shadow: 0px 0px 5px #ff9e64;
-    border-radius: 10px;
-    background-color: #414868;
-    transition: all 0.2s;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
-#btn:hover{
-    box-shadow: 0px 0px 10px #ff9e64;
+
+.card__body p{
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.5;
 }
-#btn:disabled{
-    background-color: #282d41;
-    box-shadow: 0px 0px 0px;
-}
-.container{
+.footer{
+    margin: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #414868;
-    border: solid 5px #f7768e;
-    box-shadow: 0px 0px 5px #f7768e;
-    border-radius: 10px;
-    width: 900px;
-    height: 900px;
 }
-.row-container{
-    padding: 10px;
+.footer p{
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 48px;
+}
+.footer button{
+    margin: 10px;
+    width: 100px;
+    font-size: 48px;
+}
+.footer input{
+    width: 10%;
+    font-size: 28px;
+}
+.status{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
-@keyframes animate {
-    25%{
-        transform: scale(0, 0);
-    }
+.status p{
+    font-size: 36px;
+    margin: 5px;
 }
-.slot-animate{
-    animation: animate 1.25s;
+#correct{
+    color: var(--green);
+}
+#wrong{
+    color: var(--red);
 }
 @media screen and (max-width: 1400px), screen and (max-height: 900px) {
-    .container{
-        height: 800px;
-        width: 800px;
+    .footer p{
+        
+        font-size: 36px;
     }
-    p{
+    .status p{
         font-size: 28px;
-    }
-    img{
-        width: 150px;
-        height: 150px;
-    }
-}
-@media screen and (max-width: 992px), screen and (max-height: 700px){
-    .container{
-        height: 650px;
-        width: 650px;
-    }
-    p{
-        font-size: 24px;
-    }
-    img{
-        width: 120px;
-        height: 120px;
-    }
-}
-@media screen and (max-width: 767px), screen and (max-height: 500px){
-    .container{
-        height: 600px;
-        width: 300px;
-    }
-    p{
-        font-size: 22px;
-    }
-    img{
-        width: 50px;
-        height: 50px;
-    }
-}
-@media (orientation: landscape) and (hover: none) and (pointer: coarse){
-    .container{
-        height: 350px;
-        width: 600px;
-    }
-    p{
-        font-size: 20px;
-    }
-    img{
-        border: 2px;
-        width: 50px;
-        height: 50px;
-    }
-    #btn{
-        font-size: 20px;
+        margin: 3px;
     }
 }

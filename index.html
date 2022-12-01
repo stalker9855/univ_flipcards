@@ -5,31 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Slot machine</title>
+    <title>Lab11</title>
 </head>
 <body>
-    <div class="container">
-        <p id="username">User</p>
-        <p id="count">Score: 0</p>
-        <div class="row-container">
-            <div><img id="first-row-first-col" src="img/apple.jpg"></div> 
-            <div><img id="first-row-second-col" src="img/apple.jpg"></div> 
-            <div><img id="first-row-third-col" src="img/apple.jpg"></div> 
-        </div>
-        <div class="row-container">
-            <div><img id="second-row-first-col" src="img/apple.jpg"></div> 
-            <div><img  id="second-row-second-col" src="img/apple.jpg"></div> 
-            <div><img id="second-row-third-col" src="img/apple.jpg"></div> 
-        </div>
-        <div class="row-container">
-            <div><img id="third-row-first-col" src="img/apple.jpg"></div>
-            <div><img id="third-row-second-col" src="img/apple.jpg"></div> 
-            <div><img id="third-row-third-col" src="img/apple.jpg"></div> 
+        <div class="card" id="btn">
+            <div class="card__inner">
+                <div class="card__face card__face--front">
+                    <h2 id="front_word"></h2>
+                </div>
+                <div class="card__face card__face--back">
+                    <div class="card__content">
+                        <div class="card__header">   
+                        </div>
+                        <div class="card__body">
+                            <h3 id="back_word">123</h3>
+                            <p id="translate_word"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button id="btn">CLICK TO SLOT</button>
-    </div>
-   
-    
-    <script src="script.js"></script>
+        </div>
+       
+        <div class="footer">
+            <input type="text" placeholder="Answer" id="input">
+            <button id="prev">&#129064;</button>
+            <p id="switch">1/10</p>
+            <button id="next">&#129066;</button>
+        </div>
+        <div class="status">
+            <p id="correct">Correct: 0</p>
+            <p id="wrong">Wrong: 0</p>
+        </div>
+        
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
