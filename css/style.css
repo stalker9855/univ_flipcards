@@ -1,0 +1,125 @@
+body{
+    width: 100%;
+    margin: 0px auto;
+    background-color: #24283b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+p{
+    color: #c0caf5;
+    margin: 2px;
+    font-size: 36px;
+    font-family: monospace;
+    font-weight: bolder;
+}
+img{
+    user-select: none;
+    margin: 4px;
+    border: solid 5px #ff9e64;
+    box-shadow: 0px 0px 5px #ff9e64;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+#btn{
+    font-family: monospace;
+    font-size: 24px;
+    color: #c0caf5;
+    border: solid 3px #ff9e64;
+    box-shadow: 0px 0px 5px #ff9e64;
+    border-radius: 10px;
+    background-color: #414868;
+    transition: all 0.2s;
+}
+#btn:hover{
+    box-shadow: 0px 0px 10px #ff9e64;
+}
+#btn:disabled{
+    background-color: #282d41;
+    box-shadow: 0px 0px 0px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #414868;
+    border: solid 5px #f7768e;
+    box-shadow: 0px 0px 5px #f7768e;
+    border-radius: 10px;
+    width: 900px;
+    height: 900px;
+}
+.row-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+@keyframes animate {
+    25%{
+        transform: scale(0, 0);
+    }
+}
+.slot-animate{
+    animation: animate 1.25s;
+}
+@media screen and (max-width: 1400px), screen and (max-height: 900px) {
+    .container{
+        height: 800px;
+        width: 800px;
+    }
+    p{
+        font-size: 28px;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+    }
+}
+@media screen and (max-width: 992px), screen and (max-height: 700px){
+    .container{
+        height: 650px;
+        width: 650px;
+    }
+    p{
+        font-size: 24px;
+    }
+    img{
+        width: 120px;
+        height: 120px;
+    }
+}
+@media screen and (max-width: 767px), screen and (max-height: 500px){
+    .container{
+        height: 600px;
+        width: 300px;
+    }
+    p{
+        font-size: 22px;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media (orientation: landscape) and (hover: none) and (pointer: coarse){
+    .container{
+        height: 350px;
+        width: 600px;
+    }
+    p{
+        font-size: 20px;
+    }
+    img{
+        border: 2px;
+        width: 50px;
+        height: 50px;
+    }
+    #btn{
+        font-size: 20px;
+    }
+}
