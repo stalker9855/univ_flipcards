@@ -37,7 +37,7 @@ $(document).ready(function(){
         new QA('Dog', ["собака", "пес", "дог"]),
         new QA('Cup', ["чаша", "чашка", "чашечка", "кубок", "келих"]),
         new QA('Tree', ["дерево"]),
-        new QA('Moon', ["луна"]),
+        new QA('Moon', ["місяць"]),
     ];
     shuffle(words);
     front_word.innerHTML = words[i].word;
